@@ -1,6 +1,4 @@
 # import profile
-from operator import truediv
-
 
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
