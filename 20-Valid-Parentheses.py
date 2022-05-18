@@ -6,14 +6,14 @@ def peek_stack(stack):
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        openParentheses = ['(', '[', '{']
-        closeParentheses = [')', ']', '}']
+        open_parentheses = ['(', '[', '{']
+        close_parentheses = [')', ']', '}']
         stack = []
         i = 0
         while i < len(s):
-            if s[i] in openParentheses:
+            if s[i] in open_parentheses:
                 stack.append(s[i])
-            if s[i] in closeParentheses:
+            if s[i] in close_parentheses:
                 if s[i] == ')' and peek_stack(stack) == '(':
                     stack.pop()
                 elif s[i] == ']' and peek_stack(stack) == '[':
