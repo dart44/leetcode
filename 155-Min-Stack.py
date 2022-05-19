@@ -28,7 +28,9 @@ def main():
     obj.push(4)
     param_3 = obj.top()
     param_4 = obj.getMin()
+    print(obj, param_3, param_4)
     obj.pop()
+    print(obj.top())
 
 # Run test script if this file is not being imported
 if __name__ == '__main__':
