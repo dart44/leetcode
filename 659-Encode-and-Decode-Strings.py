@@ -26,29 +26,29 @@ class Solution:
         delimiter = '|' # can imagine instead of a single character, this was a list of characters
         escape_char = '@'
         idx = 0
-        tmp_str = []
+        char_list = []
      
         while idx < len(str):
             if str[idx] == delimiter: # could instead check if str[idx] is in list of special characters
                 if str[idx - 1] == escape_char:
-                    tmp_str.append(str[idx])
+                    char_list.append(str[idx])
                     idx += 1
                 else:
-                    decoded.append(''.join(tmp_str))
-                    tmp_str = []
+                    decoded.append(''.join(char_list))
+                    char_list = []
                     idx += 1
             else:
-                if str[idx] == escape_char:
+                if str[idx] == escape_char and str[idx+1] == delimiter:
                     idx += 1
                     continue
-                tmp_str.append(str[idx])
+                char_list.append(str[idx])
                 idx += 1
         
         return decoded
 # Test
 def main():
     test = Solution()
-    n = ["li|nt","c|ode","love","you"]
+    n = ["li|nt","c|ode","lo@ve","you"]
     print(test.encode(n)) # ["lint|code|love|you"]
     print(test.decode(test.encode(n))) # ["lint","code","love","you"]
     
