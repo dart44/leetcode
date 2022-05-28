@@ -7,6 +7,7 @@ class Solution:
     # """
     def encode(self, strs):
         encoded = []
+        
         for str in strs:
             for char in str:
                 if char == '|':
