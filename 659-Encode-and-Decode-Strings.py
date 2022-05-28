@@ -1,5 +1,4 @@
 # encode needs to separate words using some means that can be differentiated from the contents of the original strings
-# basically just implmenting escape characters
 class Solution:
     # """
     # @param: strs: a list of strings
@@ -7,15 +6,14 @@ class Solution:
     # """
     def encode(self, strs):
         encoded = []
-        delimiter = '|' # can imagine instead of a single character, this was a list of characters
-        escape_char = '@' 
+        delimiter = '|'
         
         for str in strs:
             for char in str:
                 if char == delimiter:
-                    encoded.append(escape_char)
+                    encoded.append(delimiter)
                 encoded.append(char)
-            encoded.append(delimiter)
+            encoded.append(delimiter + ' ')  
         return ''.join(encoded)
 
     # """
@@ -25,23 +23,19 @@ class Solution:
     def decode(self, str):
         decoded = []
         delimiter = '|'
-        escape_char = '@'
         idx = 0
         char_list = []
      
         while idx < len(str):
-            if str[idx] == delimiter: # could instead check if str[idx] is in list of special characters
-                if str[idx - 1] == escape_char:
+            if str[idx] == delimiter:
+                if str[idx + 1] == delimiter:
                     char_list.append(str[idx])
-                    idx += 1
-                else:
+                    idx += 2
+                elif str[idx + 1] == ' ':
                     decoded.append(''.join(char_list))
                     char_list = []
-                    idx += 1
+                    idx += 2
             else:
-                if str[idx] == escape_char and str[idx+1] == delimiter:
-                    idx += 1
-                    continue
                 char_list.append(str[idx])
                 idx += 1
         
@@ -49,7 +43,7 @@ class Solution:
 # Test
 def main():
     test = Solution()
-    n = ["li|nt","c|ode","lo@ve","you"]
+    n = ["li|nt","code","love| ","| you| "]
     print(test.encode(n)) # ["lint|code|love|you"]
     print(test.decode(test.encode(n))) # ["lint","code","love","you"]
     
