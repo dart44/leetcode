@@ -7,14 +7,15 @@ class Solution:
     # """
     def encode(self, strs):
         encoded = []
+        delimiter = '|' # can imagine instead of a single character, this was a list of characters
+        escape_char = '@' 
         
         for str in strs:
             for char in str:
-                if char == '|':
-                    encoded.append('@|')
-                else:
-                    encoded.append(char)
-            encoded.append('|')
+                if char == delimiter:
+                    encoded.append(escape_char)
+                encoded.append(char)
+            encoded.append(delimiter)
         return ''.join(encoded)
 
     # """
@@ -23,7 +24,7 @@ class Solution:
     # """
     def decode(self, str):
         decoded = []
-        delimiter = '|' # can imagine instead of a single character, this was a list of characters
+        delimiter = '|'
         escape_char = '@'
         idx = 0
         char_list = []
