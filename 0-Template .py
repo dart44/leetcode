@@ -6,6 +6,7 @@ class Solution:
 # Test
 def main():
     test = Solution()
+    n = 0
     print(f'{test.name()}')
     
 # Run test script if this file is not being imported
