@@ -1,6 +1,3 @@
-from collections import defaultdict
-from itertools import count
-
 def count_sequence(num, d) -> int:
     if num+1 in d.keys():
         return 1 + count_sequence(num+1, d)
