@@ -2,7 +2,6 @@ class Solution:
     def search(self, nums: list[int], target: int) -> int:
         # array sorted but pivoted on random pivor between 1 and nums.length
         # find target in O(log n) time
-        # binary search, but slightly different...
         
         left, right = 0, len(nums) - 1
         while left <= right:
