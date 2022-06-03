@@ -1,6 +1,6 @@
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
-        # array sorted but pivoted on random pivor between 1 and nums.length
+        # array sorted but pivoted on random pivot between 1 and nums.length
         # find target in O(log n) time
         
         left, right = 0, len(nums) - 1
