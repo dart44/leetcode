@@ -1,4 +1,3 @@
-from configparser import MAX_INTERPOLATION_DEPTH
 from typing import Optional
 
 # Definition for a binary tree node.
