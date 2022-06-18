@@ -14,7 +14,7 @@ class Solution:
 def main():
     test = Solution()
     n = ["eat","tea","tan","ate","nat","bat"]
-    print(test.groupAnagrams(n))
+    print(test.groupAnagrams(n))  # [['ate','eat','tea'],['nat','tan'],['bat']]
     
 # Run test script if this file is not being imported
 if __name__ == '__main__':
