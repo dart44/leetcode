@@ -23,12 +23,12 @@ class Solution:
                 right = mid -1
         return min_num
 
-# Test
+# Driver code
 def main():
     test = Solution()
     n = [3,4,5,1,2]
     print(f'{test.findMin(n)}')
     
-# Run test script if this file is not being imported
+# Run diver code if this file is not being imported
 if __name__ == '__main__':
     main()
