@@ -20,7 +20,7 @@ class Solution:
                     left -= 1
         return max(dict.values())
 
-# Test
+# Driver Code
 def main():
     test = Solution()
     n = [100,4,200,1,3,2] # 4
@@ -29,7 +29,7 @@ def main():
     n = [1,0,-1] # 3
     print(f'Longest Sequence is {test.longestConsecutive(n)}')
     
-# Run test script if this file is not being imported
+# Run drive code if this file is not being imported
 if __name__ == '__main__':
     # profile.run('main()') - test execution time
     main()
