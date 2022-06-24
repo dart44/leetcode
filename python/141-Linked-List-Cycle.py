@@ -24,12 +24,12 @@ class Solution:
         return False
         
         
-# Test
+# Driver code
 def main():
     test = Solution()
     n = [3,2,0,-4]
     print(f'{test.hasCycle()}')
     
-# Run test script if this file is not being imported
+# Run driver code if this file is not being imported
 if __name__ == '__main__':
     main()
