@@ -14,12 +14,12 @@ class Solution:
         else:
             return False
         
-# Test script
+# Driver code
 def main():
     input_value = str(input)
     res = Solution()
     return res.isPalindrome(input_value)
 
-# Run test script if this file is not being imported
+# Run driver code if this file is not being imported
 if __name__ == '__main__':
     main()
